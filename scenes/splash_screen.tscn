@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx5uhtysxvdbe"]
+
+[ext_resource type="Script" path="res://scripts/splash_screen.gd" id="1_po777"]
+[ext_resource type="Texture2D" uid="uid://daf5jkhh8q002" path="res://assets/splash.png" id="2_bnrcf"]
+[ext_resource type="FontFile" uid="uid://co3v8gxk1rs6h" path="res://fonts/Kenney Bold.ttf" id="3_23dw0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1uui"]
+atlas = ExtResource("2_bnrcf")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdkfe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1uui")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SplashScreen" type="Node2D"]
+script = ExtResource("1_po777")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_cdkfe")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 4.0
+offset_top = 546.0
+offset_right = 486.0
+offset_bottom = 645.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_23dw0")
+bbcode_enabled = true
+text = "This game was made for the O2A2 VN Jam 2024, a micro Visual Novel jam with strict asset limitations and a 1000 word limit"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

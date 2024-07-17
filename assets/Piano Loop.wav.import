@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://criyorr8vy07q"
+path="res://.godot/imported/Piano Loop.wav-7b09accd1ce9e40899b9e01902c58094.sample"
+
+[deps]
+
+source_file="res://assets/Piano Loop.wav"
+dest_files=["res://.godot/imported/Piano Loop.wav-7b09accd1ce9e40899b9e01902c58094.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
